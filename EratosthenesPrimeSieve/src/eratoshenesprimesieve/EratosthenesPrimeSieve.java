@@ -45,7 +45,6 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
              }
          }
      }}
-     
      for(int i = 0; i < myArrList.size();i++){
          System.out.println("Primzahl: " + myArrList.get(i));
      }
