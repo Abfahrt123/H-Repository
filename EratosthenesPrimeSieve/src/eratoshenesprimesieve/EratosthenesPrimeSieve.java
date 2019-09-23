@@ -5,6 +5,8 @@
  */
 package eratoshenesprimesieve;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author marku
@@ -27,11 +29,10 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
    
     @Override
     public void printPrimes() {
-       for(int i = 2; i < max_number;i++){
-           if(isPrime(i)){
-               System.out.println("Primzahl: " + i);
-           }
-       } 
+     ArrayList<Integer> myArrList = new ArrayList<>();
+     for(int i = 2; i < max_number; i++){
+        
+     }
     }
     
     public static void main(String[]args){
