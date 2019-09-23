@@ -50,12 +50,46 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
          System.out.println("Primzahl: " + myArrList.get(i));
      }
     }
-    
+    //Aufgabe 2
+    public void aufgabe2(int limit){
+        int maxPrim = 0;
+        ArrayList<Integer> primes = new ArrayList<>();
+    for(int i = 2; i <= limit+2;i++){
+        if(isPrime(i)){
+            primes.add(i);
+        }
+     }
+    for(int a = 4; a <= limit; a+=2){
+        
+        for(int i = 0; primes.get(i) <= a+2; i++){
+            
+           if(primes.get(i) <= a){
+               maxPrim = primes.get(i);
+           } 
+           else{
+               break;
+           }
+        }
+        boolean isFin = false;
+        while(isFin == false){
+            int rest = a - maxPrim;
+            if(isPrime(rest) && rest > 1){
+                isFin = true;
+                System.out.println(rest + " + " + maxPrim + " = " + a);
+            }
+            else{
+                maxPrim = primes.get(primes.indexOf(maxPrim)-1);
+            }
+        }
+    }
+    }
     public static void main(String[]args){
-        EratosthenesPrimeSieve s = new EratosthenesPrimeSieve(100);
-        s.printPrimes();
+       EratosthenesPrimeSieve is = new EratosthenesPrimeSieve(100);
+       is.aufgabe2(208);
     }
     
-    
 }
+    
+
+
 
