@@ -31,12 +31,28 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
     public void printPrimes() {
      ArrayList<Integer> myArrList = new ArrayList<>();
      for(int i = 2; i < max_number; i++){
-        
+        myArrList.add(i);
+     }
+     for(int a = 0; a < myArrList.size();a++){
+         int zahl = myArrList.get(a);
+         int teiler = myArrList.get(a);
+         for(;zahl < max_number;zahl += teiler){
+             if(zahl != teiler){
+             if((zahl % teiler) == 0){
+                 if(myArrList.contains(zahl)){
+               myArrList.remove(myArrList.indexOf(zahl));
+                 }
+             }
+         }
+     }}
+     
+     for(int i = 0; i < myArrList.size();i++){
+         System.out.println("Primzahl: " + myArrList.get(i));
      }
     }
     
     public static void main(String[]args){
-        EratosthenesPrimeSieve s = new EratosthenesPrimeSieve(97);
+        EratosthenesPrimeSieve s = new EratosthenesPrimeSieve(100);
         s.printPrimes();
     }
     
