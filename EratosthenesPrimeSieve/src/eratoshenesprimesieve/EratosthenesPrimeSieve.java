@@ -87,9 +87,6 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
        EratosthenesPrimeSieve is = new EratosthenesPrimeSieve(100);
        is.aufgabe2(208);     
     }
-    
-    
-    
 }
     
 
